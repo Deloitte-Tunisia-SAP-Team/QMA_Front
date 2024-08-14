@@ -1,0 +1,83 @@
+<mvc:View controllerName="qmassets.controller.Issue_Details_view"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.uxap"
+    xmlns:m="sap.m"
+    xmlns:core="sap.ui.core">
+
+    <!-- Object Page Layout -->
+    <ObjectPageLayout id="ObjectPageLayout" showHeaderContent="true" enableLazyLoading="true">
+        
+        <!-- Header Section -->
+        <headerTitle>
+            <ObjectPageHeader
+                objectTitle="{i18n>issueTitle}"
+                objectSubtitle="{i18n>issueSubtitle}"
+                isObjectIconAlwaysVisible="true"
+                showPlaceholder="false">
+                <actions>
+                    <m:Button text="{i18n>edit}" press="onEditPress"/>
+                    <m:Button text="{i18n>delete}" press="onDeletePress"/>
+                </actions>
+            </ObjectPageHeader>
+        </headerTitle>
+
+        <!-- Header Content Section -->
+        <headerContent>
+            <m:HBox>
+                <m:VBox>
+                    <m:Label text="{i18n>issueIDLabel}"/>
+                    <m:Text text="{model>/IssueID}"/>
+                </m:VBox>
+                <m:VBox>
+                    <m:Label text="{i18n>statusLabel}"/>
+                    <m:Text text="{model>/IssueStatus}"/>
+                </m:VBox>
+            </m:HBox>
+        </headerContent>
+
+        <!-- Sections -->
+        <sections>
+            <!-- General Information Section -->
+            <ObjectPageSection title="{i18n>General Info}">
+                <ObjectPageSubSection>
+                    <core:Fragment fragmentName="qmassets.view.fragments.GeneralInfo" type="XML"/>
+                </ObjectPageSubSection>
+            </ObjectPageSection>
+
+            <ObjectPageSection title="{i18n>Event Chain}">
+                <ObjectPageSubSection>
+                    <core:Fragment fragmentName="qmassets.view.fragments.Eventchain" type="XML"/>
+                </ObjectPageSubSection>
+            </ObjectPageSection>
+
+            <ObjectPageSection title="{i18n>Area Specific}">
+                <ObjectPageSubSection>
+                    <core:Fragment fragmentName="qmassets.view.fragments.Areaspecific" type="XML"/>
+                </ObjectPageSubSection>
+            </ObjectPageSection>
+
+            <ObjectPageSection title="{i18n>Contact Persons}">
+                <ObjectPageSubSection>
+                    <core:Fragment fragmentName="qmassets.view.fragments.Contactpersons" type="XML"/>
+                </ObjectPageSubSection>
+            </ObjectPageSection>
+
+            <ObjectPageSection title="{i18n>Comment Box}">
+                <ObjectPageSubSection>
+                    <core:Fragment fragmentName="qmassets.view.fragments.Commentbox" type="XML"/>
+                </ObjectPageSubSection>
+            </ObjectPageSection>
+
+            <ObjectPageSection title="{i18n>Attachements}">
+                <ObjectPageSubSection>
+                    <core:Fragment fragmentName="qmassets.view.fragments.Attachements" type="XML"/>
+                </ObjectPageSubSection>
+            </ObjectPageSection>
+
+            
+
+        
+            
+        </sections>
+    </ObjectPageLayout>
+</mvc:View>
