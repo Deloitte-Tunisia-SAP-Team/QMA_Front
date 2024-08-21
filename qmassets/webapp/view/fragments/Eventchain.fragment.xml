@@ -1,5 +1,93 @@
-<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
-    <VBox>
-        <Text text="Event Chain Fragment"/>
-    </VBox>
+<core:FragmentDefinition
+    xmlns:m="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns="sap.suite.ui.commons">
+    <m:VBox>
+       
+        <!-- Add your ProcessFlow control here -->
+        <ProcessFlow id="processflow1" nodePress="onNodePress">
+            <nodes>
+                <!-- Existing nodes -->
+                <ProcessFlowNode
+                    nodeId="1"
+                    laneId="id0"
+                    title="Sales Order 1"
+                    titleAbbreviation="SO 1"
+                    isTitleClickable="false"
+                    children="2"
+                    state="Positive"
+                    stateText="Positive Status"
+                    texts="" />
+                <ProcessFlowNode
+                    nodeId="2"
+                    laneId="id1"
+                    title="Delivery 13"
+                    titleAbbreviation="DD 1"
+                    isTitleClickable="false"
+                    children="11"
+                    state="Positive"
+                    stateText="OK Delivery"
+                    texts="this is delivery document" />
+                <ProcessFlowNode
+                    nodeId="10"
+                    laneId="id3"
+                    title="Accounting Document 7"
+                    titleAbbreviation="AD 7"
+                    isTitleClickable="false"
+                    state="PlannedNegative"
+                    stateText="Planned Negative"
+                    texts="text 1 runs over two rows but no  more than two" />
+                <ProcessFlowNode
+                    nodeId="11"
+                    laneId="id2"
+                    title="Invoice 4"
+                    titleAbbreviation="INV 4"
+                    isTitleClickable="false"
+                    state="Negative"
+                    stateText="Negative Status should not run over more than two rows of text" />
+                <ProcessFlowNode
+                    nodeId="12"
+                    laneId="id2"
+                    title="Invoice 5"
+                    titleAbbreviation="INV 5"
+                    isTitleClickable="false"
+                    children="5"
+                    state="Neutral" />
+                <ProcessFlowNode
+                    nodeId="5"
+                    laneId="id3"
+                    title="Accounting Document 10"
+                    titleAbbreviation="AD 10"
+                    state="Planned" />
+            </nodes>
+            <lanes>
+                <!-- Existing lanes -->
+                <ProcessFlowLaneHeader
+                    laneId="id0"
+                    iconSrc="sap-icon://order-status"
+                    text="Issue Requested"
+                    position="0" />
+                <ProcessFlowLaneHeader
+                    laneId="id1"
+                    iconSrc="sap-icon://monitor-payments"
+                    text="Issue Accepted"
+                    position="1" />
+                <ProcessFlowLaneHeader
+                    laneId="id2"
+                    iconSrc="sap-icon://payment-approval"
+                    text="Complaint Letter Sent"
+                    position="2" />
+                <ProcessFlowLaneHeader
+                    laneId="id3"
+                    iconSrc="sap-icon://money-bills"
+                    text="Expected Complaint Letter Feedback"
+                    position="3" />
+                <ProcessFlowLaneHeader
+                    laneId="id4"
+                    iconSrc="sap-icon://money-bills"
+                    text="Usage descision"
+                    position="4" />
+            </lanes>
+        </ProcessFlow>
+    </m:VBox>
 </core:FragmentDefinition>

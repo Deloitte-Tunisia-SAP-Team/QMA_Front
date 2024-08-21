@@ -1,0 +1,16 @@
+{
+    "comments": [
+        {
+            "author": "John Doe",
+            "authorPic": "sap-icon://employee",
+            "date": "July 10, 2023",
+            "text": "This is a sample comment."
+        },
+        {
+            "author": "Gharbi Ahmed",
+            "authorPic": "sap-icon://customer",
+            "date": "July 11, 2023",
+            "text": "testing purposes."
+        }
+    ]
+}

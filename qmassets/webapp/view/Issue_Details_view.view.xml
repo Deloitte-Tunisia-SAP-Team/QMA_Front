@@ -1,36 +1,67 @@
 <mvc:View controllerName="qmassets.controller.Issue_Details_view"
     xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
     xmlns="sap.uxap"
+    xmlns:f="sap.f"
     xmlns:m="sap.m"
     xmlns:core="sap.ui.core">
 
     <!-- Object Page Layout -->
     <ObjectPageLayout id="ObjectPageLayout" showHeaderContent="true" enableLazyLoading="true">
         
-        <!-- Header Section -->
+       <!-- Header Section -->
         <headerTitle>
-            <ObjectPageHeader
-                objectTitle="{i18n>issueTitle}"
-                objectSubtitle="{i18n>issueSubtitle}"
-                isObjectIconAlwaysVisible="true"
-                showPlaceholder="false">
+            <ObjectPageDynamicHeaderTitle>
+                <expandedHeading>
+                    <m:Title text="Issue Details" wrapping="true"/>
+                </expandedHeading>
+                <snappedHeading>
+                    <m:HBox>
+                        <m:VBox>
+                            <m:Title text="Issue Details" wrapping="true"/>
+                        </m:VBox>
+                    </m:HBox>
+                </snappedHeading>
                 <actions>
                     <m:Button text="{i18n>edit}" press="onEditPress"/>
                     <m:Button text="{i18n>delete}" press="onDeletePress"/>
                 </actions>
-            </ObjectPageHeader>
+            </ObjectPageDynamicHeaderTitle>
         </headerTitle>
 
         <!-- Header Content Section -->
         <headerContent>
-            <m:HBox>
-                <m:VBox>
-                    <m:Label text="{i18n>issueIDLabel}"/>
-                    <m:Text text="{model>/IssueID}"/>
+            <m:HBox class="sapUiSmallMarginBottom" alignItems="Center">
+                <m:VBox class="sapUiSmallMarginLeft">
+                    <f:Avatar
+                        src="https://s3-media0.fl.yelpcdn.com/bphoto/WFcy3Uy4xNpyDGC_3671wA/348s.jpg"
+                        displaySize="XL"
+                        displayShape="Square"
+                        class="sapUiSmallMarginEnd customAvatar"/>
                 </m:VBox>
+                <m:VBox class="sapUiSmallMarginEnd">
+                    <m:Label text="Issue Number" class="sapUiSmallMarginEnd sapUiFontMedium"/>
+                    <m:Text text="MU80-24-AL-200014652" class="sapUiSmallMarginEnd blueText"/>
+                    <m:Label text="Material Number" class="sapUiSmallMarginEnd sapUiFontMedium"/>
+                    <m:Text text="5A41CA3-01 - Mid Roll SMI" class="sapUiSmallMarginEnd blueText"/>
+                    <m:Label text="Description" class="sapUiSmallMarginEnd sapUiFontMedium"/>
+                    <m:Text text="MaterialDescription" class="sapUiSmallMarginEnd blueText"/>
+                </m:VBox>
+                <m:VBox class="sapUiSmallMarginEnd">
+                    <m:Label text="Responsible Area" class="sapUiSmallMarginEnd sapUiFontMedium"/>
+                    <m:Text text="Assembly Line (AL)" class="sapUiSmallMarginEnd blueText"/>
+                </m:VBox>
+
+                <m:VBox class="sapUiSmallMarginEnd">
+                    <m:Label text="Status" class="sapUiSmallMarginEnd sapUiFontMedium"/>
+                    <m:Text
+                        text="Pending"
+                        class="sapUiSmallMarginEnd orangeText bigText"
+                       />
+                </m:VBox>
+
                 <m:VBox>
-                    <m:Label text="{i18n>statusLabel}"/>
-                    <m:Text text="{model>/IssueStatus}"/>
+                    <m:Label text="Total Cost" class="sapUiSmallMarginEnd sapUiFontMedium"/>
+                    <m:ObjectNumber number="49.99" unit="EUR" class="sapUiSmallMarginEnd"/>
                 </m:VBox>
             </m:HBox>
         </headerContent>
@@ -38,46 +69,42 @@
         <!-- Sections -->
         <sections>
             <!-- General Information Section -->
-            <ObjectPageSection title="{i18n>General Info}">
+            <ObjectPageSection title="General Info">
                 <ObjectPageSubSection>
                     <core:Fragment fragmentName="qmassets.view.fragments.GeneralInfo" type="XML"/>
                 </ObjectPageSubSection>
             </ObjectPageSection>
 
-            <ObjectPageSection title="{i18n>Event Chain}">
+            <ObjectPageSection title="Event Chain">
                 <ObjectPageSubSection>
                     <core:Fragment fragmentName="qmassets.view.fragments.Eventchain" type="XML"/>
                 </ObjectPageSubSection>
             </ObjectPageSection>
 
-            <ObjectPageSection title="{i18n>Area Specific}">
+            <ObjectPageSection title="Area Specific">
                 <ObjectPageSubSection>
                     <core:Fragment fragmentName="qmassets.view.fragments.Areaspecific" type="XML"/>
                 </ObjectPageSubSection>
             </ObjectPageSection>
 
-            <ObjectPageSection title="{i18n>Contact Persons}">
+            <ObjectPageSection title="Contact Persons">
                 <ObjectPageSubSection>
                     <core:Fragment fragmentName="qmassets.view.fragments.Contactpersons" type="XML"/>
                 </ObjectPageSubSection>
             </ObjectPageSection>
 
-            <ObjectPageSection title="{i18n>Comment Box}">
+            <ObjectPageSection title="Comment Box">
                 <ObjectPageSubSection>
                     <core:Fragment fragmentName="qmassets.view.fragments.Commentbox" type="XML"/>
                 </ObjectPageSubSection>
             </ObjectPageSection>
 
-            <ObjectPageSection title="{i18n>Attachements}">
+            <ObjectPageSection title="Attachements">
                 <ObjectPageSubSection>
                     <core:Fragment fragmentName="qmassets.view.fragments.Attachements" type="XML"/>
                 </ObjectPageSubSection>
             </ObjectPageSection>
 
-            
-
-        
-            
         </sections>
     </ObjectPageLayout>
 </mvc:View>

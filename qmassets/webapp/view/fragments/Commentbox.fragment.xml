@@ -1,5 +1,27 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
     <VBox>
-        <Text text="Comment Box Fragment"/>
+    <List
+            id="commentList"
+            showSeparators="Inner"
+            items="{/comments}">
+            
+            <!-- Template for each comment -->
+            <FeedListItem
+                sender="{author}"
+                icon="{icon}"
+                timestamp="{date}"
+                text="{text}"
+                convertLinksToAnchorTags="All" />
+        </List>
+        <!-- Feed Input for posting comments -->
+        <FeedInput
+            id="feedInput"
+            placeholder="Add a comment..."
+            post="onPostComment"
+            icon="sap-icon://person-placeholder"
+            class="sapUiSmallMarginTopBottom" />
+
+        <!-- List to display comments -->
+        
     </VBox>
 </core:FragmentDefinition>
